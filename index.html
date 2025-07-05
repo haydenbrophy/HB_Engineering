@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HMB Engineering</title>
+  <style>
+    body {
+      background-color: #c0c0c0; /* Classic Windows gray */
+      font-family: "Times New Roman", Times, serif;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      border: 2px outset #c0c0c0;
+      background-color: #c0c0c0;
+      padding: 20px;
+      margin: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #000080;
+      text-shadow: 2px 2px 0px #808080;
+    }
+    h2 {
+      text-align: center;
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      color: #800080;
+    }
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.4;
+      border: 2px inset #c0c0c0;
+      background-color: #ffffff;
+      padding: 15px;
+    }
+    .content a {
+      color: #0000ff;
+      text-decoration: underline;
+    }
+    .content a:visited {
+      color: #800080;
+    }
+    .content a:hover {
+      background-color: #ffff00;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #808080;
+      margin: 15px 0;
+    }
+    .thick-line {
+      border: none;
+      height: 4px;
+      background: linear-gradient(to right, #000080, #800080, #000080);
+      margin: 20px 0;
+    }
+    .rainbow-line {
+      border: none;
+      height: 3px;
+      background: linear-gradient(to right, #003366, #0066cc, #3399ff, #66ccff, #3399ff, #0066cc, #003366);
+      margin: 15px 0;
+    }
+    .dotted-line {
+      border: none;
+      height: 1px;
+      background-image: repeating-linear-gradient(to right, #000 0px, #000 3px, transparent 3px, transparent 6px);
+      margin: 15px 0;
+    }
+    ul {
+      background-color: #ffffcc;
+      padding: 10px;
+      border: 1px solid #000;
+      margin: 15px 0;
+    }
+    li {
+      margin: 5px 0;
+      list-style-type: square;
+      color: #000080;
+    }
+    li a {
+      color: #000080;
+      font-weight: bold;
+    }
+    .welcome-box {
+      background-color: #e0e0e0;
+      border: 1px solid #808080;
+      padding: 10px;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+    .index-header {
+      font-weight: bold;
+      font-size: 15px;
+      color: #800000;
+      text-decoration: underline;
+    }
+    .last-updated {
+      font-style: italic;
+      text-align: center;
+      color: #008000;
+      margin-top: 20px;
+      font-size: 12px;
+      background-color: #f0f0f0;
+      padding: 5px;
+      border: 1px dashed #808080;
+    }
+    .blink {
+      animation: blink 1s infinite;
+      color: #ff0000;
+      font-weight: bold;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .marquee {
+      background-color: #000080;
+      color: #ffff00;
+      padding: 5px;
+      margin: 10px 0;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .marquee span {
+      display: inline-block;
+      animation: scroll 15s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>H. Brophy Engineering Log</h1>
+    <hr class="rainbow-line">
+    <h2>Experimental Rocketry and Technical Projects</h2>
+    
+    <div class="marquee">
+      <span>*** Welcome to HMB Engineering - Your Source for Amateur Rocketry Information! ***</span>
+    </div>
+    
+    <div class="content">
+      <div class="welcome-box">
+        <strong>Welcome to H. Brophy's Engineering!</strong> This site contains project notes, test data, and design documentation related to amateur rocketry and propulsion systems.
+      </div>
+      
+      <hr class="thick-line">
+      
+      <p class="index-header">Index of Pages:</p>
+      <ul>
+        <li><a href="projects.html">🚀 Project Archive</a></li>
+        <li><a href="test_logs.html">📊 Static Test Logs</a></li>
+        <li><a href="notes.html">📝 Technical Notes</a></li>
+        <li><a href="gallery.html">📷 Photo Gallery</a></li>
+        <li><a href="about.html">👨‍🔬 About the Author</a></li>
+        <li><a href="contact.html">📧 Contact</a></li>
+      </ul>
+      
+      <hr class="dotted-line">
+      
+      <p style="text-align: center; font-size: 13px;">
+        <span class="blink">NEW!</span> Latest test results now available!
+      </p>
+      
+      <hr>
+      
+      <div class="last-updated">
+        Last updated: July 5, 2025<br>
+        <small>Best viewed in Netscape Navigator 4.0+ or Internet Explorer 4.0+</small>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
