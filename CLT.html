@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+
+  <meta charset="UTF-8">
+  <title>About Me - H. Brophy Engineering Log</title>
+  <style>
+    body {
+      background-color: #c0c0c0;
+      font-family: "Times New Roman", Times, serif;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      border: 2px outset #c0c0c0;
+      background-color: #c0c0c0;
+      padding: 20px;
+      margin: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #000080;
+      text-shadow: 2px 2px 0px #808080;
+    }
+    h2 {
+      text-align: center;
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      color: #800080;
+    }
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.4;
+      border: 2px inset #c0c0c0;
+      background-color: #ffffff;
+      padding: 15px;
+    }
+    .content a {
+      color: #0000ff;
+      text-decoration: underline;
+    }
+    .content a:visited {
+      color: #800080;
+    }
+    .content a:hover {
+      background-color: #ffff00;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #808080;
+      margin: 15px 0;
+    }
+    .rainbow-line {
+      border: none;
+      height: 3px;
+      background: linear-gradient(to right, #003366, #0066cc, #3399ff, #66ccff, #3399ff, #0066cc, #003366);
+      margin: 15px 0;
+    }
+    .bio-section {
+      background-color: #e0e0e0;
+      border: 1px solid #808080;
+      padding: 15px;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+    .section-header {
+      font-weight: bold;
+      font-size: 15px;
+      color: #800000;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      background-color: #f0f0f0;
+      padding: 5px;
+      border: 1px dashed #808080;
+    }
+    .credentials {
+      background-color: #ffffcc;
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    .interests {
+      background-color: #f0f8ff;
+      border: 1px solid #333;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin: 3px 0;
+      color: #000080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Classical Lamination Theory</h1>
+    <hr class="rainbow-line">
+    <h2>H. Brophy Engineering Log</h2>
+    
+    <div class="content">
+      <div class="bio-section">
+        <p class="section-header">Introduction</p>
+        <p> Composite materials present unique challenges in structural engineering due to their anisotropic and, more specifically, orthotropic nature, which means their mechanical properties vary depending on the direction of the applied load. Unlike isotropic materials, which behave uniformly in all directions, composites require a more complex physics framework in order to accurately predict their behavior under different loading conditions. This directional dependence complicates the modelling process, especially when considering layered or laminated composite structures. To manage this complexity, engineers often rely on simplifications and idealizations that can capture the essential behavior of composites while remaining computationally feasible. One of the most widely used approaches for analyzing laminated composites is Classical Lamination Theory (CLT).
+        </p>
+
+        <p>
+            The primary assumption of Classical Lamination Theory is that the structure in question can be approximated as a surface, meaning it has no significant thickness through its cross-section. Secondly, it breaks down the composite into a series of so-called 'laminae', which is just a Latin word for a thin, flat piece or plate. In practice, a lamina might be a ply of carbon fiber or a honeycomb sheet. Anything with uniform mechanical properties can be approximated as a lamina. By stacking these laminae together, we form what is known as a 'laminate'. These two assumptions form the basis of CLT and allow the complex underlying physics to be simplified into a series of straightforward matrix multiplications, which we’ll discuss next.
+        </p>
+        
+        <p class="section-header">Behaviour of a Laminae</p>
+        
+        <p>
+            Before we can dive into combining layers to create complex laminates, we first need to investigate the behavior of a single layer (or lamina). When discussing the mechanical properties of each layer, it’s done in terms of two primary directions. Assuming the reader has a basic understanding of composites, it’s generally known that a typical composite consists of two phases: the dispersed phase and the matrix phase. In the case of carbon composites, the dispersed phase is the carbon fibers, while the matrix phase is often a thermoset epoxy.
+        </p>
+        <p>
+            The carbon fibers typically have a very high elastic modulus, often in the hundreds of gigapascals, making them extremely stiff. In contrast, the matrix phase is much less stiff, often by two orders of magnitude. If you imagine a cured carbon composite, the direction along the fibers will inherently be very stiff, closely approximating the stiffness of the fibers themselves. On the other hand, pulling orthogonal to the fibers primarily engages the matrix, resulting in much lower stiffness. This explains why carbon fiber exhibits what's called an orthotropic nature: its mechanical properties vary depending on the direction of loading.
+        </p>
+        <p>
+            For the purposes of Classical Lamination Theory, we’re concerned only with two in-plane directions. As a matter of convention, the fiber direction is labeled with the subscript ‘1’, and the matrix (or transverse) direction is labeled with the subscript ‘2’. So in practice, the elastic modulus of a composite along the fiber direction is referred to as E₁. This is important to keep in mind going forward, since different laminae will often be oriented in different directions, but each will have its own local coordinate system defined by these 1 and 2 principal axes.
+        </p>
+        
+        <p class="section-header">Creating a Laminate</p>
+        
+        <p>
+            In the process of creating a composite part it's common to 'lay-up' the structure by stacking layers one after another. Classical Lamination Theory works in much the same way, but mathematically. Before we get into the weeds of the matrices and linear algebra, its important to understand the reason behind these transformations. At the core of CLT, is the idea that each of the local laminae can be described only with it's local stiffness and it's orietnation with respect to the overall laminate. In this way, if we can create a mathematical construct of a laminae's stiffness, by performing coordinate transformations and then simple addition, the behaviour of many single laminaes can be combined into describing the behaviour of the entire laminate system.
+        </p>
+        
+    
+        <p class="section-header">Constitutive Equations</p>
+        
+        <p>
+            The principal law governing the mechanical behaviour of a material is the constitutive equations, which is just a fancy way of saying how the material will deform under stress. As 'consitutive' means a mathematical relation between two or more physical quantities, in this case we're relating stress and strain. It's well-known that Hooke's law, shown below, describes the deformation of a so-called 'spring' by using a constant known as it's stiffness, denoted as often K, in a linear force per unit length.     <p>
+                $$
+                F = Kx
+                $$
+                </p> 
+                Since materials behave like springs, their behaviour can be described the same way, which a spring is one-dimensional, the world of classical lamination theory is two-dimensional. Thus are equations are put into matrix form in order to describe their behaviour. The consitutive law for a one-dimensional body is given as:
+                </p>
+                <p>
+                    $$
+                    \sigma = E\epsilon
+                    $$
+                </p>
+                Expanding to two-dimensionals of deformation forms these matrices:
+        
+            <p>
+              $$
+              \begin{bmatrix}
+              \varepsilon_1 \\
+              \varepsilon_2 \\
+              \gamma_{12}
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+              \frac{1}{E_{11}} & -\frac{\nu_{21}}{E_{22}} & 0 \\
+              -\frac{\nu_{12}}{E_{11}} & \frac{1}{E_{22}} & 0 \\
+              0 & 0 & \frac{1}{G_{12}}
+              \end{bmatrix}
+              \begin{bmatrix}
+              \sigma_1 \\
+              \sigma_2 \\
+              \tau_{12}
+              \end{bmatrix}
+              $$
+            </p>
+            
+            <p>
+                Now, rearranging the equation we want to solve solve for the stress/strain relationship we need the bellow Q-terms, which makes up the so-called Q-matrix.
+            </p>
+            
+            <p>
+              $$
+              \begin{bmatrix}
+              \sigma_1 \\
+              \sigma_2 \\
+              \tau_{12}
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+              Q_{11} & Q_{12} & 0 \\
+              Q_{21} & Q_{22} & 0 \\
+              0 & 0 & 2Q_{66}
+              \end{bmatrix}
+              \begin{bmatrix}
+              \varepsilon_1 \\
+              \varepsilon_2 \\
+              \gamma_{12}/2
+              \end{bmatrix}
+              \quad \quad [\mathbf{Q}] = [\mathbf{S}]^{-1}
+              $$
+            </p>
+            
+            In short this matrix describes the local stiffness behaviour of a single laminae. Now that there is way to describe a single layer, all we need is to perform coordinate transformations to convert so-called '1'/'2' local system into the 'x'/'y' global coordinate system of the laminate. Since we often know the applied loading on the laminate, in the laminate's own coordinate frame, it's a matter of convience to start from the laminae and build up to create a 'Q' matrix to describe the laminate on a global level.
+        
+            
+        
+        <div class="bio-section">
+            <p class="section-header">References</p>
+            <p>[1] "Lecture 4 – Classical Laminated Plate Theory," Mechanics of Composite Materials, ECUSW, YouTube. [Online]. Available: 
+              <a href="https://www.youtube.com/watch?v=loQH6XzmPEo" target="_blank">
+                https://www.youtube.com/watch?v=loQH6XzmPEo
+              </a>
+            </p>
+            <p>[2] "Mechanics of Composite Materials: Lecture 4 - Classical Laminated Plate Theory" Vinay Goyal, YouTube. [Online]. Available: 
+          <a href="https://www.youtube.com/watch?v=CMhwNTMe_mo" target="_blank">
+            https://www.youtube.com/watch?v=CMhwNTMe_mo
+          </a>
+        </p>
+      </div>
+
+      </div>
+
+      
+    <div class="content">
+          <div class="back-link">
+        <a href="index.html">← Back to Main Page</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
